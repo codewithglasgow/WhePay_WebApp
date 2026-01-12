@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>WHE PAY | FSP SAGI QUANTUM</title>
+    <title>WHE PAY | FSP SAGI QUANTUM DASHBOARD</title>
     <style>
         :root { 
             --bg: #020617; --card: #1e293b; --accent: #f43f5e; 
@@ -12,59 +12,59 @@
 
         body { background: var(--bg); color: white; font-family: -apple-system, sans-serif; margin: 0; padding: 0; }
 
-        /* TICKER SYSTEM - Restored Ball Colors & All Games */
+        /* 1. TICKER SYSTEM (Restored Balls & All Games) */
         .ticker-fixed { 
             background: #000; border-bottom: 1px solid #333; 
-            position: sticky; top: 0; z-index: 1100; height: 70px; 
+            position: sticky; top: 0; z-index: 1100; height: 80px; 
             display: flex; align-items: center; overflow: hidden;
         }
         .ticker-ribbon { display: flex; gap: 40px; animation: scroll 35s linear infinite; white-space: nowrap; padding-left: 20px;}
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
         
-        .game-group { display: flex; align-items: center; gap: 8px; }
+        .game-group { display: flex; align-items: center; gap: 10px; border-right: 1px solid #333; padding-right: 25px; }
         .t-ball { 
-            width: 32px; height: 32px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #fff, #ccc); 
+            width: 32px; height: 32px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #ffffff, #b0b0b0); 
             color: #000; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.6); border: 1px solid #999;
         }
 
-        /* NAVIGATION & OUTSTANDING BAR */
-        .nav { position: sticky; top: 70px; background: rgba(2,6,23,0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 10px; border-bottom: 1px solid #334155; }
-        .tabs { display: flex; gap: 4px; margin-bottom: 8px; }
-        .tab { flex: 1; background: #1e293b; border: none; color: #94a3b8; padding: 12px 5px; border-radius: 8px; font-weight: 800; font-size: 10px; text-transform: uppercase; }
+        /* 2. NAVIGATION & OUTSTANDING MARKS */
+        .nav { position: sticky; top: 80px; background: rgba(2,6,23,0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 10px; border-bottom: 1px solid #334155; }
+        .tabs { display: flex; gap: 4px; margin-bottom: 10px; }
+        .tab { flex: 1; background: #1e293b; border: none; color: #94a3b8; padding: 12px 5px; border-radius: 8px; font-weight: 800; font-size: 10px; text-transform: uppercase; cursor: pointer; }
         .tab.active { background: var(--neon); color: #000; }
         
         .out-bar { background: #0f172a; padding: 10px; border-radius: 8px; font-size: 11px; display: flex; align-items: center; border: 1px solid #1e293b; overflow-x: auto; white-space: nowrap; }
-        .out-item { background: var(--accent); color: white; padding: 2px 8px; border-radius: 4px; margin-left: 5px; font-weight: bold; }
+        .out-item { background: var(--accent); color: white; padding: 2px 8px; border-radius: 4px; margin-left: 6px; font-weight: bold; }
 
-        /* CONTENT CONTAINERS */
+        /* 3. CONTAINERS */
         .container { padding: 15px; max-width: 600px; margin: auto; }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
         .card { background: var(--card); border-radius: 12px; padding: 15px; margin-bottom: 12px; border: 1px solid #334155; }
 
-        /* MATRIX GRID */
+        /* 4. MATRIX GRID (Full Mapping) */
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 15px 0; }
         .triplet { display: flex; border: 1px solid #334155; border-radius: 6px; overflow: hidden; height: 45px; }
-        .cell { flex: 1; display: flex; align-items: center; justify-content: center; font-weight: 700; background: rgba(255,255,255,0.03); border-right: 1px solid #334155; cursor: pointer; color: #64748b; }
+        .cell { flex: 1; display: flex; align-items: center; justify-content: center; font-weight: 700; background: rgba(255,255,255,0.03); border-right: 1px solid #334155; cursor: pointer; color: #64748b; font-size: 14px; }
         .cell.highlight { background: var(--neon); color: #000; }
 
-        /* HISTORY/CALENDAR */
+        /* 5. HISTORY & CALENDAR */
         .day-box { background: #1e293b; border-radius: 12px; margin-bottom: 15px; border: 1px solid #334155; overflow: hidden; }
-        .day-head { background: #334155; padding: 10px; display: flex; justify-content: space-between; font-weight: bold; font-size: 13px; }
+        .day-head { background: #334155; padding: 10px; display: flex; justify-content: space-between; font-weight: bold; font-size: 13px; color: var(--neon); }
         .draw-row { display: grid; grid-template-columns: repeat(5, 1fr); padding: 12px; gap: 8px; text-align: center; }
-        .draw-val { background: #0f172a; padding: 8px 0; border-radius: 6px; font-weight: 800; border: 1px solid #475569; }
-        .draw-label { font-size: 9px; color: var(--sec); margin-bottom: 4px; text-transform: uppercase; }
+        .draw-val { background: #0f172a; padding: 8px 0; border-radius: 6px; font-weight: 800; border: 1px solid #475569; font-size: 15px; }
+        .draw-label { font-size: 9px; color: var(--sec); margin-bottom: 4px; text-transform: uppercase; font-weight: bold; }
 
-        /* INPUTS */
-        .search-box { width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 12px; color: white; box-sizing: border-box; margin-bottom: 10px; }
-        select { width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 12px; color: white; margin-bottom: 10px; }
-        .btn-action { width: 100%; background: var(--success); color: #000; border: none; padding: 15px; border-radius: 10px; font-weight: 900; cursor: pointer; }
+        /* 6. INPUTS & ANALYZER */
+        .search-box { width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 10px; padding: 12px; color: white; box-sizing: border-box; margin-bottom: 10px; font-size: 14px; }
+        select { width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 12px; color: white; margin-bottom: 10px; outline: none; }
+        .btn-action { width: 100%; background: var(--success); color: #000; border: none; padding: 15px; border-radius: 10px; font-weight: 900; cursor: pointer; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
-    <div class="ticker-fixed"><div id="ticker-content" class="ticker-ribbon">Loading Live Data...</div></div>
+    <div class="ticker-fixed"><div id="ticker-content" class="ticker-ribbon">Connecting to live feeds...</div></div>
 
     <div class="nav">
         <div class="tabs">
@@ -74,7 +74,7 @@
             <button class="tab" onclick="switchTab('analyzer', this)">Analyzer</button>
         </div>
         <div class="out-bar" id="outstanding-container">
-            <span style="color:var(--accent); font-weight:bold; margin-right:5px;">OUTSTANDING:</span>
+            <span style="color:var(--accent); font-weight:bold;">OUTSTANDING:</span>
             <div id="outstanding-list" style="display:flex;"></div>
         </div>
     </div>
@@ -95,21 +95,25 @@
 
     <div id="analyzer" class="container tab-content">
         <div class="card">
-            <h2 style="color:var(--neon); margin-top:0;">DEEP ANALYZER</h2>
+            <h3 style="color:var(--neon); margin-top:0;">QUANTUM DEEP ANALYZER</h3>
+            <label style="font-size:10px; color:var(--sec);">SELECT GAME</label>
             <select id="anGame"><option value="P2WHE">Play Whe</option><option value="PCK3">Pick 3</option><option value="PCK4">Pick 4</option></select>
+            <label style="font-size:10px; color:var(--sec);">SELECT DAY</label>
             <select id="anDay"><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option></select>
+            <label style="font-size:10px; color:var(--sec);">SELECT TIME</label>
             <select id="anTime"><option value="ALL">All Times</option><option value="MOR">Morning</option><option value="MID">Midday</option><option value="NON">Afternoon</option><option value="EVE">Evening</option></select>
-            <button class="btn-action" onclick="runDeepAnalysis()">RANK MARKS</button>
+            <button class="btn-action" onclick="runDeepAnalysis()">Generate Ranking</button>
             <div id="analyzer-results" style="margin-top:20px;"></div>
         </div>
     </div>
 
 <script>
-    // --- CORE DATA ---
+    // --- COMPREHENSIVE DATA MAPPING ---
     const spirits = {1:"Centipede",2:"Old Lady",3:"Carriage",4:"Dead Man",5:"Parson Man",6:"Belly",7:"Hog",8:"Tiger",9:"Cattle",10:"Monkey",11:"Corbeau",12:"King",13:"Crapaud",14:"Money",15:"Sick Woman",16:"Jamette",17:"Pigeon",18:"Water Boat",19:"Horse",20:"Dog",21:"Mouth",22:"Rat",23:"House",24:"Queen",25:"Morrocoy",26:"Fowl",27:"Little Snake",28:"Red Fish",29:"Opium Man",30:"House Cat",31:"Parson Wife",32:"Shrimp",33:"Spider",34:"Blind Man",35:"Big Snake",36:"Donkey"};
     
     const matrixData = [ [[1,5,17],[2,6,18],[3,7,19]],[[4,8,20],[5,9,21],[6,10,22]],[[7,11,23],[8,12,24],[9,13,25]],[[10,14,26],[11,15,27],[12,16,28]],[[13,17,29],[14,18,30],[15,19,31]],[[16,20,32],[17,21,33],[18,22,34]],[[19,23,35],[20,24,36],[21,25,1]],[[22,26,2],[23,27,3],[24,28,4]],[[25,29,5],[26,30,6],[27,31,7]],[[28,32,8],[29,33,9],[30,34,10]],[[31,35,11],[32,36,12],[33,1,13]],[[34,2,14],[35,3,15],[36,4,16]] ];
     
+    // Full Bank Blocking & Lucky Diamond Objects Restored
     const bankBlocking = { 1:[10,34], 2:[11,35,10,34], 3:[12,36], 4:[12,13,36,1], 5:[14,2], 6:[2,3,14,15], 7:[4,16], 8:[4,5,16,17], 9:[6,18], 10:[1,2,19,20], 11:[2,21,27,15], 12:[3,4,22,23], 13:[4,24], 14:[5,6,25,26], 15:[6,27], 16:[7,8,19,28], 17:[8,29], 18:[9,21], 19:[16,28,32,7], 20:[17,29,33,8], 21:[18,30], 22:[18,19,30,31], 23:[20,32], 24:[20,21,32,33], 25:[22,34], 26:[22,23,34,35], 27:[24,36,12,15], 28:[19,20,16,17], 29:[16,20], 30:[17,21], 31:[18,22], 32:[19,23], 33:[20,24], 34:[1,2,25,26], 35:[2,27], 36:[3,4,28,29] };
     const luckyDiamond = { 1:[36], 2:[33], 3:[34], 4:[35], 5:[1], 6:[2], 7:[3], 8:[4], 9:[20,28], 10:[21,29], 11:[22,30], 12:[19,31], 13:[24], 14:[25], 15:[26], 16:[27], 17:[28], 18:[29], 19:[8,12], 20:[9], 21:[10,16], 22:[11,15], 23:[12], 24:[13], 25:[14], 26:[15], 27:[16], 28:[17], 29:[18], 30:[19], 31:[20], 32:[21], 33:[22], 34:[23], 35:[24], 36:[1,25] };
 
@@ -120,31 +124,33 @@
         initMatrix();
         await fetchAllData();
         loadTicker();
-        setInterval(loadTicker, 30000);
+        setInterval(loadTicker, 45000); // Auto-refresh ticker every 45s
     };
 
     async function fetchAllData() {
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbwyr-M_ZzIscNgxJmR_UYHgZqmamn62Np4msDFaCjX9KgyUmyjuzuIYbawBmT0_mw4j/exec?action=calendar&game=P2WHE&weeks=12");
-            const result = await response.json();
+            const res = await fetch("https://script.google.com/macros/s/AKfycbwyr-M_ZzIscNgxJmR_UYHgZqmamn62Np4msDFaCjX9KgyUmyjuzuIYbawBmT0_mw4j/exec?action=calendar&game=P2WHE&weeks=12");
+            const result = await res.json();
             globalWeeks = result.data.weeks;
             processDashboard();
-        } catch (e) { console.error("Data Load Failed"); }
+        } catch (e) { document.getElementById('shelf-results').innerHTML = "Network Error. Please refresh."; }
     }
 
     async function loadTicker() {
-        const res = await fetch("https://script.google.com/macros/s/AKfycbymSUZ3cuBP7wZSKkxs8QmjMkKP6q3j-LOW_CVpY3n6Sw1EzsdwPu6yTEkpOmiAJz95/exec?action=ticker");
-        const json = await res.json();
-        let tickerHtml = "";
-        Object.entries(json.games).forEach(([game, draws]) => {
-            draws.forEach(d => {
-                tickerHtml += `<div class="game-group">
-                    <span style="color:var(--neon); font-weight:bold;">${game} ${d.time}:</span>
-                    ${d.numbers.split(',').map(n => `<div class="t-ball">${n.trim()}</div>`).join('')}
-                </div>`;
+        try {
+            const res = await fetch("https://script.google.com/macros/s/AKfycbymSUZ3cuBP7wZSKkxs8QmjMkKP6q3j-LOW_CVpY3n6Sw1EzsdwPu6yTEkpOmiAJz95/exec?action=ticker");
+            const json = await res.json();
+            let tickerHtml = "";
+            Object.entries(json.games).forEach(([game, draws]) => {
+                draws.forEach(d => {
+                    tickerHtml += `<div class="game-group">
+                        <span style="color:var(--neon); font-weight:bold; font-size:12px;">${game} ${d.time}:</span>
+                        ${d.numbers.split(',').map(n => `<div class="t-ball">${n.trim()}</div>`).join('')}
+                    </div>`;
+                });
             });
-        });
-        document.getElementById('ticker-content').innerHTML = tickerHtml + tickerHtml;
+            document.getElementById('ticker-content').innerHTML = tickerHtml + tickerHtml;
+        } catch(e) {}
     }
 
     function processDashboard() {
@@ -152,6 +158,7 @@
         let lastSeenMap = {};
         let historyHtml = "";
 
+        // Build History View & Track Marks
         globalWeeks.forEach(week => {
             week.days.slice().reverse().forEach(day => {
                 historyHtml += `<div class="day-box">
@@ -169,23 +176,25 @@
             });
         });
 
-        // Outstanding
+        // Calculate Outstanding
         let outstanding = [];
         for(let i=1; i<=36; i++) if(!seenMarks.has(i)) outstanding.push(i);
         document.getElementById('outstanding-list').innerHTML = outstanding.map(n => `<span class="out-item">${n}</span>`).join('');
 
-        // Shelf
+        // Build Shelf Results
         let shelfHtml = "";
         for(let i=1; i<=36; i++) {
             shelfHtml += `<div class="card shelf-card" data-search="${i} ${spirits[i]}">
                 <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div style="font-size:22px; font-weight:900; color:var(--neon);">#${i}</div>
-                    <div style="flex:1; margin-left:15px;">
-                        <div style="font-weight:bold; letter-spacing:1px;">${spirits[i].toUpperCase()}</div>
-                        <div style="font-size:11px; color:var(--sec);">LAST SEEN: ${lastSeenMap[i] || 'OUTSTANDING'}</div>
+                    <div style="font-size:24px; font-weight:900; color:var(--neon); width:50px;">#${i}</div>
+                    <div style="flex:1; margin-left:10px;">
+                        <div style="font-weight:bold; letter-spacing:1px; color:white;">${spirits[i].toUpperCase()}</div>
+                        <div style="font-size:10px; color:var(--sec);">LAST SEEN: ${lastSeenMap[i] || 'LONG OUTSTANDING'}</div>
                     </div>
-                    <div style="font-size:10px; font-weight:bold; color:${outstanding.includes(i)?'var(--accent)':'var(--success)'}">
-                        ${outstanding.includes(i)?'DUE':'ACTIVE'}
+                    <div style="text-align:right;">
+                        <span style="font-size:9px; font-weight:bold; padding:4px 8px; border-radius:4px; background:${outstanding.includes(i)?'#450a0a':'#064e3b'}; color:${outstanding.includes(i)?'#f87171':'#34d399'}">
+                            ${outstanding.includes(i)?'OUTSTANDING':'ACTIVE'}
+                        </span>
                     </div>
                 </div>
             </div>`;
@@ -194,7 +203,7 @@
         document.getElementById('history-results').innerHTML = historyHtml;
     }
 
-    // --- MATRIX LOGIC ---
+    // --- MATRIX FUNCTIONS ---
     function initMatrix() {
         const grid = document.getElementById('matrix-grid');
         matrixData.forEach(set => set.forEach(trip => {
@@ -216,26 +225,28 @@
         const diam = luckyDiamond[num] || [];
         
         document.getElementById('matrix-details').innerHTML = `
-            <h2 style="color:var(--neon); margin:0 0 10px 0;">#${num} ${spirits[num].toUpperCase()}</h2>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
-                <div style="background:rgba(0,0,0,0.2); padding:10px; border-radius:8px;">
-                    <div style="font-size:10px; color:var(--accent); font-weight:bold;">BANK BLOCKING</div>
-                    <div style="font-size:18px; font-weight:bold; margin-top:5px;">${block.join(', ') || 'N/A'}</div>
+            <h2 style="color:var(--neon); margin:0 0 10px 0; border-bottom:1px solid #334155; padding-bottom:10px;">#${num} ${spirits[num].toUpperCase()}</h2>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                <div style="background:#0f172a; padding:12px; border-radius:10px; border:1px solid #1e293b;">
+                    <div style="font-size:9px; color:var(--accent); font-weight:bold; text-transform:uppercase;">Bank Blocking</div>
+                    <div style="font-size:20px; font-weight:bold; margin-top:8px; color:white;">${block.join(' • ') || 'N/A'}</div>
                 </div>
-                <div style="background:rgba(0,0,0,0.2); padding:10px; border-radius:8px;">
-                    <div style="font-size:10px; color:var(--neon); font-weight:bold;">LUCKY DIAMOND</div>
-                    <div style="font-size:18px; font-weight:bold; margin-top:5px;">${diam.join(', ') || 'N/A'}</div>
+                <div style="background:#0f172a; padding:12px; border-radius:10px; border:1px solid #1e293b;">
+                    <div style="font-size:9px; color:var(--neon); font-weight:bold; text-transform:uppercase;">Lucky Diamond</div>
+                    <div style="font-size:20px; font-weight:bold; margin-top:8px; color:white;">${diam.join(' • ') || 'N/A'}</div>
                 </div>
             </div>
+            <p style="font-size:10px; color:var(--sec); margin-top:15px; text-align:center;">Quantum mapping updated for V4.4</p>
         `;
     }
 
-    // --- UI HELPERS ---
+    // --- NAVIGATION & UTILS ---
     function switchTab(id, btn) {
         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
         document.getElementById(id).classList.add('active');
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         btn.classList.add('active');
+        window.scrollTo(0,0);
     }
 
     function filterShelf() {
@@ -248,7 +259,10 @@
     function runDeepAnalysis() {
         const day = document.getElementById('anDay').value;
         const time = document.getElementById('anTime').value;
+        const game = document.getElementById('anGame').value;
         let counts = {};
+        
+        // Deep search logic across 12-week history
         globalWeeks.forEach(w => w.days.forEach(d => {
             if(d.dayName === day) {
                 Object.entries(d.draws).forEach(([t, v]) => {
@@ -258,12 +272,14 @@
                 });
             }
         }));
+        
         const sorted = Object.entries(counts).sort((a,b) => b[1]-a[1]);
         document.getElementById('analyzer-results').innerHTML = sorted.map(([n, c]) => `
-            <div style="display:flex; justify-content:space-between; padding:10px; border-bottom:1px solid #334155;">
-                <span>#${n} ${spirits[n]}</span><b>${c} HITS</b>
+            <div style="display:flex; justify-content:space-between; padding:12px; border-bottom:1px solid #1e293b; align-items:center;">
+                <span style="font-weight:bold; color:white;">#${n} ${spirits[n]}</span>
+                <span style="background:var(--neon); color:#000; padding:2px 10px; border-radius:20px; font-size:12px; font-weight:900;">${c} HITS</span>
             </div>
-        `).join('') || "No hits found.";
+        `).join('') || `<div style="text-align:center; padding:20px; color:var(--sec);">No data found for this selection.</div>`;
     }
 </script>
 </body>
