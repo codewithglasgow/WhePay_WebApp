@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <style>
         :root { 
-            --bg: #000; 
-            --card: #1c1c1e; 
+            --bg: #01061b; 
+            --card: #030314; 
             --accent: #007AFF; 
             --success: #32d74b; 
             --warn: #ff9f0a; 
@@ -13,8 +13,8 @@
             --sec: #8e8e93; 
             --purple: #af52de; 
             --neon: #00f2ff; 
-            --dark-bg: #020617;
-            --slate: #1e293b;
+            --dark-bg: #041250;
+            --slate: #010813;
         }
         
         * {
@@ -32,15 +32,15 @@
         
         /* NEW Ticker Styles */
         .ticker-fixed { 
-            background: linear-gradient(to bottom, #111, #000); 
-            border-bottom: 1px solid #333; 
-            padding: 0px 12px; 
+            background: linear-gradient(to bottom, #202020, #1f0000); 
+            border-bottom: 1px solid #313131; 
+            padding: 0px 7px; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
             width: 100%; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-            height: 75px;
+            box-shadow: 0 4px 10px rgba(6, 1, 14, 0.6);
+            height: 85px;
             display: flex;
             align-items: center;
             overflow: hidden;
@@ -66,7 +66,7 @@
             gap: 8px; 
             color: #ff0000; 
             font-weight: bold; 
-            font-size: 16px; 
+            font-size: 19px; 
             flex-shrink: 0; 
             animation: pulse-red 1.8s infinite; 
             margin-right: 20px; 
@@ -136,7 +136,7 @@
             position: sticky; 
             top: 75px; 
             width: 100%; 
-            background: rgba(28,28,30,0.9); 
+            background: rgba(4, 0, 17, 0.9); 
             backdrop-filter: blur(20px); 
             z-index: 100; 
             padding: 12px; 
@@ -146,7 +146,7 @@
         
         .search-box { 
             width: 100%; 
-            background: #1c1c1e; 
+            background: #242222; 
             border: 1px solid #333; 
             border-radius: 8px; 
             padding: 10px; 
@@ -300,7 +300,7 @@
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            border-bottom: 1px solid #334155; 
+            border-bottom: 1px solid #45515c; 
             margin-bottom: 15px; 
             padding-bottom: 10px; 
         }
@@ -333,9 +333,9 @@
         
         .triplet { 
             display: flex; 
-            border: 1px solid #334155; 
+            border: 1px solid #949596; 
             border-radius: 6px; 
-            background: rgba(30, 41, 59, 0.5); 
+            background: rgba(5, 5, 5, 0.5); 
             overflow: hidden; 
             height: 42px; 
         }
@@ -345,10 +345,10 @@
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            border-right: 1px solid #334155; 
+            border-right: 1px solid #f4f6f8; 
             font-weight: 700; 
-            font-size: 13px; 
-            color: #94a3b8; 
+            font-size: 14px; 
+            color: #f6f8fa; 
             cursor: pointer; 
         }
         
@@ -358,7 +358,7 @@
         }
         
         .cell.dim { 
-            opacity: 0.15; 
+            opacity: 2.5; 
         }
         
         .quantum-instructions { 
@@ -379,7 +379,7 @@
         
         .chart-tab { 
             background: #334155; 
-            color: #94a3b8; 
+            color: #ffffff; 
             padding: 6px 10px; 
             border-radius: 4px; 
             font-size: 10px; 
@@ -390,7 +390,7 @@
         
         .chart-tab.active { 
             background: var(--neon); 
-            color: #000; 
+            color: #ffffff; 
         }
         
         .comparison { 
@@ -407,7 +407,7 @@
         
         .column { 
             flex: 1; 
-            background: rgba(0,0,0,0.3); 
+            background: rgba(2, 0, 0, 0.3); 
             padding: 10px; 
             border-radius: 6px; 
             border: 1px solid rgba(255,255,255,0.05); 
@@ -441,8 +441,183 @@
             color: #cbd5e1; 
             font-style: italic; 
         }
+
+        /* Quantum Chart Cont'd: Light Mode Styles */
+        .quantum-chart.light-mode {
+            background: #ffffff !important;
+            color: #000000 !important;
+        }
+
+        .quantum-chart.light-mode .card {
+            background: #f8f9fa !important;
+            border-color: #dee2e6 !important;
+            color: #000000 !important;
+        }
+
+        .quantum-chart.light-mode .quantum-header {
+            border-bottom-color: #adb5bd !important;
+        }
+
+        .quantum-chart.light-mode .quantum-header h2 {
+            color: #000000 !important;
+        }
+
+        .quantum-chart.light-mode .grid {
+            background: transparent !important;
+        }
+
+        .quantum-chart.light-mode .triplet {
+            background: #ffffff !important;
+            border-color: #adb5bd !important;
+        }
+
+        .quantum-chart.light-mode .cell {
+            color: #000000 !important;
+            border-right-color: #adb5bd !important;
+            background: #f8f9fa !important;
+        }
+
+        .quantum-chart.light-mode .cell.highlight {
+            background: #007AFF !important;
+            color: #ffffff !important;
+        }
+
+        .quantum-chart.light-mode .cell.dim {
+            opacity: 0.9 !important;
+        }
+
+        .quantum-chart.light-mode .chart-tab {
+            background: #e9ecef !important;
+            color: #494545 !important;
+        }
+
+        .quantum-chart.light-mode .chart-tab.active {
+            background: #007AFF !important;
+            color: #ffffff !important;
+        }
+
+        .quantum-chart.light-mode .column {
+            background: #f8f9fa !important;
+            border-color: #dee2e6 !important;
+        }
+
+        .quantum-chart.light-mode .column h4 {
+            color: #000000 !important;
+            border-bottom-color: #adb5bd !important;
+        }
+
+        .quantum-chart.light-mode .data-val {
+            color: #000000 !important;
+        }
+
+        .quantum-chart.light-mode .diamond-text {
+            color: #6c757d !important;
+        }
+
+        /* Toggle Switch Styles */
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+
+        .theme-toggle-label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #334155;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: #007AFF;
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Icons for toggle */
+        .toggle-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            z-index: 1;
+        }
+
+        .toggle-icon.sun {
+            left: 6px;
+            color: #ffd43b;
+        }
+
+        .toggle-icon.moon {
+            right: 6px;
+            color: #94a3b8;
+        }
+
+        input:checked + .toggle-slider .toggle-icon.sun {
+            color: #666;
+        }
+
+        input:checked + .toggle-slider .toggle-icon.moon {
+            color: #fff;
+        }
+
+        /* For light mode toggle container */
+        .quantum-chart.light-mode .theme-toggle-container {
+            background: #e9ecef !important;
+            border-color: #adb5bd !important;
+        }
+
+        .quantum-chart.light-mode .theme-toggle-label {
+            color: #495057 !important;
+        }
         
-        /* Splash & Dashboard Transitions *//* Splash & Dashboard Transitions - IMPROVED */
+        /* Splash & Dashboard Transitions */
         #splash-screen {
             position: fixed;
             inset: 0;
@@ -454,128 +629,38 @@
             overflow: hidden;
             transition: opacity 0.8s ease-out;
         }
-        
+
         .stage {
-            width: 100%;
-            height: 100%;
+            width: 300%;
+            height: 300%;
             display: flex;
-            flex-direction: row; /* Default: side-by-side */
+            flex-direction: row;
             align-items: center;
             justify-content: space-around;
             perspective: 800px;
-            padding: 0 5vw;
+            padding: 0 10vw;
         }
-        
-        /* For tablets and smaller */
-        @media (max-width: 768px) {
-            .stage {
-                flex-direction: row; /* Keep side-by-side */
-                gap: 15px;
-                padding: 0 10px;
-            }
-            
-            .scene {
-                width: 22vw;
-                height: 22vw;
-                max-width: 65px;
-                max-height: 65px;
-            }
-            
-            .title {
-                font-size: 8vw;
-                white-space: normal;
-                text-align: center;
-                line-height: 1.2;
-            }
-            
-            .subtitle {
-                font-size: 4vw;
-                white-space: normal;
-                text-align: center;
-            }
-        }
-        
-        /* For mobile phones */
-        @media (max-width: 480px) {
-            .stage {
-                flex-direction: row; /* Dice on sides, text in middle */
-                justify-content: space-between;
-                align-items: center;
-                gap: 10px;
-                padding: 0 15px;
-            }
-            
-            .scene {
-                width: 18vw;
-                height: 18vw;
-                max-width: 45px;
-                max-height: 45px;
-                flex-shrink: 0; /* Prevent shrinking */
-            }
-            
-            .reveal {
-                flex: 1;
-                min-width: 0; /* Allow text to shrink */
-                padding: 0 10px;
-            }
-            
-            .title {
-                font-size: 7vw;
-                white-space: normal;
-                line-height: 1.1;
-                margin: 2px 0;
-            }
-            
-            .subtitle {
-                font-size: 3.5vw;
-                margin-top: 5px;
-            }
-        }
-        
-        /* For very small phones */
-        @media (max-width: 360px) {
-            .stage {
-                flex-direction: column; /* Stack on tiny screens */
-                justify-content: center;
-                gap: 20px;
-            }
-            
-            .scene {
-                width: 25vw;
-                height: 25vw;
-                max-width: 55px;
-                max-height: 55px;
-            }
-            
-            .title {
-                font-size: 9vw;
-            }
-            
-            .subtitle {
-                font-size: 4.5vw;
-            }
-        }
-        
+
         .scene {
-            width: 18vw;
-            height: 18vw;
-            max-width: 70px;
-            max-height: 70px;
+            width: 50vw;
+            height: 50vw;
+            max-width: 56px;
+            max-height: 56px;
             position: relative;
         }
-        
+
         .cube {
-            width: 100%;
-            height: 100%;
+            width: 130%;
+            height: 130%;
             position: absolute;
             transform-style: preserve-3d;
-            transition: transform 2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+            transition: transform 3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
         }
-        
+
         .face {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 130%;
+            height: 130%;
             background: #ffffff;
             border-radius: 12%;
             display: flex;
@@ -584,7 +669,7 @@
             box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
             backface-visibility: hidden;
         }
-        
+
         /* Position based 18vw width (half is 9vw) */
         .face--1 { transform: rotateY(0deg) translateZ(9vw); }
         .face--2 { transform: rotateY(90deg) translateZ(9vw); }
@@ -592,7 +677,7 @@
         .face--4 { transform: rotateY(-90deg) translateZ(9vw); }
         .face--5 { transform: rotateX(90deg) translateZ(9vw); }
         .face--6 { transform: rotateX(-90deg) translateZ(9vw); }
-        
+
         /* Cap the translateZ for larger screens using media query */
         @media (min-width: 400px) {
             .face--1 { transform: rotateY(0deg) translateZ(35px); }
@@ -602,22 +687,10 @@
             .face--5 { transform: rotateX(90deg) translateZ(35px); }
             .face--6 { transform: rotateX(-90deg) translateZ(35px); }
         }
-        
-        .dot { 
-            width: 2.5vw; 
-            height: 2.5vw; 
-            max-width: 8px; 
-            max-height: 8px; 
-            background: #111; 
-            border-radius: 50%; 
-        }
-        
-        .dots { 
-            display: grid; 
-            gap: 1vw; 
-            grid-template-columns: repeat(3, 1fr); 
-        }
-        
+
+        .dot { width: 2.5vw; height: 2.5vw; max-width: 8px; max-height: 8px; background: #111; border-radius: 50%; }
+        .dots { display: grid; gap: 1vw; grid-template-columns: repeat(3, 1fr); }
+
         .reveal {
             text-align: center;
             opacity: 0;
@@ -625,31 +698,13 @@
             transition: all 0.8s ease-out;
             flex: 1;
         }
-        
-        .reveal.show { 
-            opacity: 1; 
-            transform: translateY(0); 
-        }
-        
-        .title { 
-            font-size: 7vw; 
-            font-weight: 900; 
-            color: #fff; 
-            margin: 0; 
-            white-space: nowrap; 
-        }
-        
-        .subtitle { 
-            font-size: 3.5vw; 
-            color: #58a6ff; 
-            margin-top: 5px; 
-            white-space: nowrap; 
-        }
-        
-        .fade-out { 
-            opacity: 0 !important; 
-            pointer-events: none; 
-        }
+
+        .reveal.show { opacity: 1; transform: translateY(0); }
+
+        .title { font-size: 6vw; font-weight: 10; color: #fff; margin: 0; white-space: nowrap; }
+        .subtitle { font-size: 3.5vw; color: #58a6ff; margin-top: 5px; white-space: nowrap; }
+
+        .fade-out { opacity: 0 !important; pointer-events: none; }
         
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -680,16 +735,16 @@
             }
             
             .stage {
-                flex-direction: column;
+                flex-direction: row;
                 justify-content: center;
                 gap: 20px;
             }
             
             .scene {
-                width: 25vw;
-                height: 25vw;
-                max-width: 60px;
-                max-height: 60px;
+                width: 15vw;
+                height: 15vw;
+                max-width: 30px;
+                max-height: 30px;
             }
             
             .ticker-time {
@@ -733,6 +788,158 @@
             50% { opacity: 1; }
             100% { opacity: 0.7; }
         }
+
+        /* Calendar Dropdown Styles */
+        .calendar-table-widget {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            min-width: 320px;
+        }
+
+        .calendar-table-widget th {
+            background: #1c1c1e;
+            color: #58a6ff;
+            padding: 10px 5px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 800;
+            border-bottom: 2px solid #333;
+        }
+
+        .calendar-table-widget td {
+            padding: 8px 5px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+            vertical-align: top;
+        }
+
+        .calendar-table-widget .date-header {
+            position: sticky;
+            left: 0;
+            background: #111;
+            font-weight: bold;
+            color: #58a6ff;
+            min-width: 60px;
+            border-right: 2px solid #333;
+            font-size: 11px;
+        }
+
+        .calendar-table-widget .draw-ball-widget {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 11px;
+            color: #000;
+            margin: 1px;
+            text-align: center;
+        }
+
+        .calendar-table-widget .current-day-row {
+            background: rgba(0, 122, 255, 0.1);
+            border-left: 3px solid #00ffff;
+        }
+
+        .calendar-table-widget .holiday-cell {
+            background: #1a1a1a;
+            color: #ffa500;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 5px;
+            text-align: center;
+        }
+
+        .pending-hourglass {
+            display: inline-block;
+            animation: hourglass-spin 2.5s infinite ease-in-out;
+            filter: drop-shadow(0 0 5px rgba(255, 212, 59, 0.5));
+            font-size: 16px;
+        }
+
+        @keyframes hourglass-spin {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(180deg); }
+            50% { transform: rotate(180deg); }
+            60% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Compact layout for dropdown */
+        @media (max-width: 768px) {
+            .calendar-table-widget {
+                font-size: 11px;
+            }
+            
+            .calendar-table-widget .draw-ball-widget {
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                font-size: 10px;
+            }
+            
+            .calendar-table-widget .date-header {
+                min-width: 50px;
+                font-size: 10px;
+            }
+        }
+
+        /* Side-by-side buttons container */
+        .dropdown-buttons-container {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .dropdown-buttons-container .dropdown-btn {
+            flex: 1;
+            min-width: 200px;
+            margin: 0;
+        }
+
+        /* Mobile horizontal scrolling */
+        @media (max-width: 768px) {
+            .dropdown-buttons-container {
+                display: flex;
+                overflow-x: auto;
+                overflow-y: hidden;
+                scrollbar-width: thin;
+                scrollbar-color: #444 #111;
+                padding-bottom: 5px;
+                gap: 8px;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .dropdown-buttons-container .dropdown-btn {
+                flex: 0 0 auto;
+                min-width: 180px;
+                white-space: nowrap;
+            }
+            
+            /* Custom scrollbar for mobile */
+            .dropdown-buttons-container::-webkit-scrollbar {
+                height: 4px;
+            }
+            
+            .dropdown-buttons-container::-webkit-scrollbar-track {
+                background: #111;
+                border-radius: 2px;
+            }
+            
+            .dropdown-buttons-container::-webkit-scrollbar-thumb {
+                background: #444;
+                border-radius: 2px;
+            }
+        }
+
+        /* Ensure dropdown panels stack vertically */
+        .dropdown-panel-container {
+            position: relative;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -743,8 +950,13 @@
             </div>
             
             <div class="reveal" id="revealText">
-                <h1 class="title">WHE PAY</h1>
-                <h1 class="title">SHELF ANALYSIS</h1>
+                <h4 class="title">WHE PAY</h4>
+                <br>
+                <h4 class="title">SHELF</h4>
+                <h4 class="title">ANALYSIS</h4>
+                <br>
+                <h4 class="title">WEB APP</h4>
+                <br>
                 <p class="subtitle">CODEWITHGLASGOW</p>
             </div>
             
@@ -771,13 +983,50 @@
                 <button class="tab active" onclick="show('shelf', this)">SHELF</button>
                 <button class="tab" onclick="show('draws', this)">DRAWS</button>
                 <button class="tab" onclick="show('analyzer', this)">ANALYZER</button>
-                <button class="tab" onclick="show('quantum', this)">QUANTUM CHART</button>
+                <button class="tab" onclick="show('quantum', this)">CHART</button>
             </div>
             <input type="text" id="masterSearch" class="search-box" placeholder="Search Mark..." onkeyup="doSearch()">
             
-            <button id="outBtn" class="dropdown-btn" onclick="toggleOutstanding()">🧮 MARKS OUTSTANDING ▾</button>
-            
-            <div id="outstanding-table" class="outstanding-panel"></div>
+            <!-- CALENDAR DROPDOWN -->
+            <!-- Side-by-side dropdown buttons with mobile scrolling -->
+            <div class="dropdown-buttons-container">
+                <button id="calBtn" class="dropdown-btn" onclick="toggleDropdown('calendar')">📅 WHE PAY DRAW CHART ▾</button>
+                <button id="outBtn" class="dropdown-btn" onclick="toggleDropdown('outstanding')">🧮 MARKS OUTSTANDING ▾</button>
+            </div>
+
+            <!-- Dropdown panels (will stack vertically) -->
+            <div class="dropdown-panel-container">
+                <!-- CALENDAR DROPDOWN -->
+                <div id="calendar-dropdown" class="outstanding-panel" style="display: none;">
+                    <div class="calendar-dropdown-header">
+                        <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+                            <button class="week-nav-btn-small" onclick="navigateWeek(1)">◀ Older Week</button>
+                            <button class="week-nav-btn-small" onclick="navigateWeek(-1)">Newer Week ▶</button>
+                        </div>
+                        <h3 id="current-week-title" class="calendar-dropdown-title" style="margin: 10px 0;">LOADING...</h3>
+                        <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;">
+                            <button class="week-nav-btn-small" onclick="navigateToDayOfWeek('Monday')">MON</button>
+                            <button class="week-nav-btn-small" onclick="navigateToDayOfWeek('Tuesday')">TUE</button>
+                            <button class="week-nav-btn-small" onclick="navigateToDayOfWeek('Wednesday')">WED</button>
+                            <button class="week-nav-btn-small" onclick="navigateToDayOfWeek('Thursday')">THU</button>
+                            <button class="week-nav-btn-small" onclick="navigateToDayOfWeek('Friday')">FRI</button>
+                            <button class="week-nav-btn-small" onclick="navigateToDayOfWeek('Saturday')">SAT</button>
+                        </div>
+                    </div>
+                    <div id="calendar-content" class="calendar-dropdown-container">
+                        <!-- Calendar will be loaded here -->
+                    </div>
+                    <div style="text-align: center; margin-top: 10px; font-size: 11px; color: #666;">
+                        <div>Use WEEK buttons to go back/forward in time</div>
+                        <div>Use DAY buttons to switch between weekdays</div>
+                    </div>
+                </div>
+
+                <!-- MARKS OUTSTANDING DROPDOWN -->
+                <div id="outstanding-dropdown" class="outstanding-panel" style="display: none;">
+                    <div id="outstanding-table"></div>
+                </div>
+            </div>
         </div>
         
         <div id="shelf-tab" class="container"></div>
@@ -813,6 +1062,8 @@
                     <option value="32">Last 32 Weeks</option>
                     <option value="36">Last 36 Weeks</option>
                     <option value="40">Last 40 Weeks</option>
+                    <option value="44">Last 44 Weeks</option>
+                    <option value="48">Last 48 Weeks</option>
                     <option value="52">Last 52 Weeks</option>
                     <option value="159">Full History (159 Weeks)</option>
                 </select>
@@ -823,13 +1074,26 @@
 
         <!-- QUANTUM CHART TAB (Added from first code) -->
         <div id="quantum-tab" class="container" style="display:none;">
-            <div class="card">
+            <div class="card quantum-chart">
                 <div class="quantum-header">
                     <div>
                         <h2>FSP SAGi</h2>
                         <div style="font-size: 9px; color: #64748b;">QUANTUM MAPPING</div>
                     </div>
-                    <button class="btn-rand" onclick="randomPick()">Quick Pick</button>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <!-- Theme Toggle (merged into header) -->
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 11px; color: #94a3b8; font-weight: bold;">MODE</span>
+                            <label class="toggle-switch" style="margin: 0;">
+                                <input type="checkbox" id="themeToggle" onchange="toggleQuantumTheme()">
+                                <span class="toggle-slider">
+                                    <span class="toggle-icon sun">☀️</span>
+                                    <span class="toggle-icon moon">🌙</span>
+                                </span>
+                            </label>
+                        </div>
+                        <button class="btn-rand" onclick="randomPick()">Quick Pick</button>
+                    </div>
                 </div>
                 
                 <div id="grid" class="grid"></div>
@@ -918,6 +1182,13 @@
         let quantumView = 'Matrix';
         let selectedQuantumNum = 27;
         
+        // Calendar Variables
+        let calendarWeeks = []; // Array of all weeks
+        let currentWeekIndex = 0; // Current week being displayed (0 = most recent)
+        let currentDayOfWeek = ''; // Current day of week being shown (e.g., "Tuesday")
+        let activeDropdown = null;
+
+        
         // ========== INITIALIZATION ==========
         document.addEventListener('DOMContentLoaded', async function() {
             startSplash();
@@ -928,6 +1199,9 @@
             
             // Setup ticker
             setupTicker();
+
+            // Load quantum theme preference
+            setTimeout(loadQuantumThemePreference, 1500);
         });
 
         // ========== NOTIFICATION SYSTEM ==========
@@ -968,7 +1242,48 @@
             }, 3000);
         }
         
-        // ========== QUANTUM CHART FUNCTIONS (From first code) ==========
+        // ========== QUANTUM CHART THEME TOGGLE ==========
+        let isQuantumLightMode = false;
+
+        function toggleQuantumTheme() {
+            const quantumChart = document.querySelector('#quantum-tab .card');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (!quantumChart) return;
+            
+            isQuantumLightMode = themeToggle.checked;
+            
+            if (isQuantumLightMode) {
+                quantumChart.classList.add('light-mode');
+                console.log('Quantum Chart: Light mode activated');
+            } else {
+                quantumChart.classList.remove('light-mode');
+                console.log('Quantum Chart: Dark mode activated');
+            }
+            
+            // Save preference to localStorage
+            localStorage.setItem('quantumTheme', isQuantumLightMode ? 'light' : 'dark');
+        }
+
+        function loadQuantumThemePreference() {
+            const savedTheme = localStorage.getItem('quantumTheme');
+            const themeToggle = document.getElementById('themeToggle');
+            const quantumChart = document.querySelector('#quantum-tab .card');
+            
+            if (!themeToggle || !quantumChart) return;
+            
+            if (savedTheme === 'light') {
+                isQuantumLightMode = true;
+                themeToggle.checked = true;
+                quantumChart.classList.add('light-mode');
+            } else {
+                isQuantumLightMode = false;
+                themeToggle.checked = false;
+                quantumChart.classList.remove('light-mode');
+            }
+        }
+
+        // ========== Update the initializeQuantumChart function to load theme preference ==========
         function initializeQuantumChart() {
             const gridEl = document.getElementById('grid');
             if (!gridEl) return;
@@ -988,7 +1303,12 @@
                     gridEl.appendChild(d);
                 });
             });
-            updateQuantumDisplay(selectedQuantumNum);
+            
+            // Load theme preference after initializing
+            setTimeout(() => {
+                loadQuantumThemePreference();
+                updateQuantumDisplay(selectedQuantumNum);
+            }, 100);
         }
         
         function updateQuantumDisplay(num) {
@@ -1013,7 +1333,7 @@
                     <div class="chart-tab ${quantumView === 'Bank' ? 'active' : ''}" onclick="setQuantumView('Bank')">Bank Chart</div>
                     <div class="chart-tab ${quantumView === 'Diamond' ? 'active' : ''}" onclick="setQuantumView('Diamond')">Diamond Chart</div>
                 </div>
-                <h3 style="color:var(--neon);margin:5px 0 10px;">MARK: #${num}</h3>
+                <h3 style="color:${isQuantumLightMode ? '#000000' : 'var(--neon)'};margin:5px 0 10px;">MARK: #${num}</h3>
             `;
             
             if (quantumView === 'Matrix') {
@@ -1023,10 +1343,10 @@
                 </div>`;
             } else if (quantumView === 'Bank') {
                 const b = bankBlocking[num] || ["Check Sequence"];
-                html += `<div class="column data-box"><h4>Blocking Marks</h4><div class="data-val">${b.join(' • ')}</div><p style="font-size:9px;color:#64748b;">Hedge these marks against your main play.</p></div>`;
+                html += `<div class="column data-box"><h4>Blocking Marks</h4><div class="data-val" style="color:${isQuantumLightMode ? '#000000' : 'white'}">${b.join(' • ')}</div><p style="font-size:9px;color:${isQuantumLightMode ? '#6c757d' : '#64748b'};">Hedge these marks against your main play.</p></div>`;
             } else if (quantumView === 'Diamond') {
                 const d = luckyDiamond[num] || ["Neutral"];
-                html += `<div class="column data-box"><h4>Lucky Diamond Chart</h4><div class="data-val" style="color:var(--neon)">${d.join(' • ')}</div><p class="diamond-text">"The mirror reflection of the current sequence."</p></div>`;
+                html += `<div class="column data-box"><h4>Lucky Diamond Chart</h4><div class="data-val" style="color:${isQuantumLightMode ? '#007AFF' : 'var(--neon)'}">${d.join(' • ')}</div><p class="diamond-text">"The mirror reflection of the current sequence."</p></div>`;
             }
             
             const instructionsEl = document.getElementById('quantum-instructions');
@@ -1068,6 +1388,7 @@
                     
                     // Process and render
                     processData(json.data.weeks);
+                    initCalendar();
                     renderShelfTab();
                     renderDrawsTab();
                     renderOutstandingTable();
@@ -1089,6 +1410,7 @@
                     showNotification('📡 Offline - Using cached data', 'warning');
                     const json = JSON.parse(cachedData);
                     processData(json);
+                    initCalendar();
                     renderShelfTab();
                     renderDrawsTab();
                     renderOutstandingTable();
@@ -1100,6 +1422,7 @@
                         showNotification('📡 Using outdated cache - connect for fresh data', 'warning');
                         const json = JSON.parse(cachedData);
                         processData(json);
+                        initCalendar();
                     } else {
                         showNotification('❌ No internet connection and no cached data', 'error');
                         loadSampleData();
@@ -1119,6 +1442,7 @@
                     showNotification('⚠️ Using cached data (network error)', 'warning');
                     const json = JSON.parse(cachedData);
                     processData(json);
+                    initCalendar();
                 } else {
                     showNotification('❌ Network error - loading sample data', 'error');
                     loadSampleData();
@@ -1167,141 +1491,468 @@
                 }
             }
         }
-        
-        function processData(weeks) {
-            // EXACT data processing logic from your second code
-            const dayOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            const timeOrder = ["MOR", "MID", "NON", "EVE"];
-            const timeNames = { MOR: "Morning", MID: "Midday", NON: "Afternoon", EVE: "Evening" };
+
+        // ========== CALENDAR FUNCTIONS ==========
+        function initCalendar() {
+            // Process calendar data from existing data
+            const cachedData = localStorage.getItem('playwhe_data');
+            if (cachedData) {
+                try {
+                    const weeks = JSON.parse(cachedData);
+                    if (weeks && weeks.length > 0) {
+                        // Store all weeks
+                        calendarWeeks = weeks.map(week => ({
+                            ...week,
+                            days: week.days || []
+                        })).reverse(); // Most recent first (week 0 = current/most recent)
+                        
+                        // Get today's day name (skip Sunday)
+                        const today = new Date();
+                        let todayName = today.toLocaleString('en-US', { weekday: 'long', timeZone: 'America/Barbados' });
+                        todayName = todayName === 'Sunday' ? 'Monday' : todayName;
+                        currentDayOfWeek = todayName;
+                        
+                        // Find current week index (week containing today)
+                        currentWeekIndex = calendarWeeks.findIndex(w => w.isCurrentWeek);
+                        if (currentWeekIndex === -1) currentWeekIndex = 0;
+                        
+                        console.log(`Calendar initialized with ${calendarWeeks.length} weeks`);
+                        console.log(`Current day: ${currentDayOfWeek}, Current week index: ${currentWeekIndex}`);
+                        
+                        // Render initial calendar
+                        renderCalendarWidgetStyle();
+                    }
+                } catch (error) {
+                    console.error('Error parsing calendar data:', error);
+                }
+            }
+        }
+
+        function renderCalendarWidgetStyle() {
+            const container = document.getElementById('calendar-content');
+            const title = document.getElementById('current-week-title');
             
-            // Reset data structures
-            timeline = [];
-            markInfo = {};
-            currentWeekHits = {};
-            const lastSeenDate = {}, lastSeenTime = {}, frequency = {};
+            if (!calendarWeeks || calendarWeeks.length === 0) {
+                container.innerHTML = '<div style="text-align:center; padding:20px; color:#ff6b6b;">No calendar data available</div>';
+                title.textContent = 'No Data';
+                return;
+            }
             
-            // Sort weeks chronologically
-            weeks.sort((a, b) => {
-                let pa = a.startDate.split(" ");
-                let pb = b.startDate.split(" ");
-                return new Date(`${pa[2]}-${pa[1]}-${pa[0]}`) - new Date(`${pb[2]}-${pb[1]}-${pb[0]}`);
-            });
+            // Get day name (handle Sunday)
+            let dayName = currentDayOfWeek;
+            if (dayName === 'Sunday') dayName = 'Monday';
             
-            for (let week of weeks) {
-                let parts = week.startDate.split(" ");
-                let monthMap = {"Jan":0,"Feb":1,"Mar":2,"Apr":3,"May":4,"Jun":5,"Jul":6,"Aug":7,"Sep":8,"Oct":9,"Nov":10,"Dec":11};
-                let startDate = new Date(parts[2], monthMap[parts[1]], parts[0]);
+            // Find 5 most recent weeks that have this day
+            const daysToShow = [];
+            for (let i = currentWeekIndex; i < calendarWeeks.length; i++) {
+                const week = calendarWeeks[i];
+                const day = week.days.find(d => d.dayName === dayName);
                 
-                for (let day of week.days) {
-                    let dDate = new Date(startDate);
-                    dDate.setDate(dDate.getDate() + dayOrder.indexOf(day.dayName));
+                if (day) {
+                    // Format date like widget: "11-Jan"
+                    const parts = week.startDate.split(' ');
+                    const dateStr = `${parts[0]}-${parts[1].slice(0,3)}`;
                     
-                    for (let t of timeOrder) {
-                        let n = day.draws[t];
-                        if (!n || n === "-" || n === "PENDING") continue;
-                        let num = parseInt(n);
-                        if (num < 1 || num > 36) continue;
+                    daysToShow.push({
+                        date: dateStr,
+                        draws: day.draws || {},
+                        dayName: day.dayName,
+                        weekIndex: i,
+                        isCurrentWeek: i === currentWeekIndex,
+                        isPastWeek: i > currentWeekIndex, // Weeks before current are past
+                        weekData: week
+                    });
+                    
+                    if (daysToShow.length >= 5) break;
+                }
+            }
+            
+            // If we don't have enough recent weeks, look further back
+            if (daysToShow.length < 5) {
+                for (let i = currentWeekIndex + 1; i < calendarWeeks.length; i++) {
+                    const week = calendarWeeks[i];
+                    const day = week.days.find(d => d.dayName === dayName);
+                    
+                    if (day) {
+                        const parts = week.startDate.split(' ');
+                        const dateStr = `${parts[0]}-${parts[1].slice(0,3)}`;
                         
-                        // Track current week hits for widget
-                        if (week.isCurrentWeek === true) {
-                            currentWeekHits[num] = (currentWeekHits[num] || 0) + 1;
-                        }
-                        
-                        // Track frequency and last seen for widget
-                        frequency[num] = (frequency[num] || 0) + 1;
-                        lastSeenDate[num] = dDate;
-                        lastSeenTime[num] = timeNames[t];
-                        
-                        // Original timeline processing
-                        let entry = { 
-                            num, 
-                            date: dDate.getTime(), 
-                            dateStr: dDate.toLocaleDateString("en-GB", {weekday:"short", day:"2-digit", month:"short", year: "numeric"}).toUpperCase(), 
-                            dayName: day.dayName, 
-                            timeSlot: t, 
-                            time: timeNames[t] 
-                        };
-                        timeline.push(entry);
-                        
-                        if (!(num in markInfo)) { 
-                            markInfo[num] = { 
-                                frequency: 0, 
-                                lastDate: null, 
-                                history: [], 
-                                nextNums: {} 
-                            }; 
-                        }
-                        markInfo[num].frequency++;
-                        markInfo[num].lastDate = dDate;
-                        markInfo[num].history.push({ 
-                            date: entry.dateStr, 
-                            time: entry.time, 
-                            ts: entry.date 
+                        daysToShow.push({
+                            date: dateStr,
+                            draws: day.draws || {},
+                            dayName: day.dayName,
+                            weekIndex: i,
+                            isCurrentWeek: i === currentWeekIndex,
+                            isPastWeek: i > currentWeekIndex,
+                            weekData: week
                         });
                         
-                        if (timeline.length > 1) {
-                            let prev = timeline[timeline.length - 2];
-                            if (markInfo[prev.num]) {
-                                markInfo[prev.num].nextNums[num] = (markInfo[prev.num].nextNums[num] || 0) + 1;
-                            }
-                        }
+                        if (daysToShow.length >= 5) break;
                     }
                 }
             }
             
-            // Generate marks array EXACTLY as in your code
-            marks = [];
-            let now = new Date();
-            for (let n = 1; n <= 36; n++) {
-                let info = markInfo[n] || { frequency: 0, lastDate: null };
-                let daysAgo = info.lastDate ? Math.floor((now.getTime() - info.lastDate.getTime()) / 86400000) : 999;
-                let avg = intervals[n] || 12;
-                let dLeft = avg - daysAgo;
-                let status = (dLeft <= 0) ? "OVERDUE" : (dLeft <= 2 ? "CLOSE" : "NORMAL");
+            // Build HTML table matching widget style (current at BOTTOM)
+            let html = `
+                <table class="calendar-table-widget">
+                    <thead>
+                        <tr>
+                            <th class="date-header">DATE</th>
+                            <th>MORNING<br>10:30 AM</th>
+                            <th>MIDDAY<br>1:00 PM</th>
+                            <th>AFTERNOON<br>4:00 PM</th>
+                            <th>EVENING<br>7:00 PM</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+            
+            // Show in REVERSE order (oldest first, current at bottom)
+            const reversedDays = [...daysToShow].reverse();
+            
+            reversedDays.forEach((day, idx) => {
+                const draws = day.draws || {};
+                const isPastWeek = day.isPastWeek;
+                const isCurrentWeek = day.isCurrentWeek;
                 
-                marks.push({ 
-                    num: n, 
-                    spirit: spirits[n], 
-                    date: info.lastDate ? info.lastDate.toLocaleDateString("en-GB", {day:"2-digit", month:"short", year: "numeric"}).toUpperCase() : "N/A", 
-                    days: daysAgo, 
-                    dLeft, 
-                    status, 
-                    avg, 
-                    frequency: info.frequency,
-                    time: lastSeenTime[n] || "N/A",
-                    isHitThisWeek: !!currentWeekHits[n]
-                });
-            }
-            marks.sort((a,b) => b.days - a.days);
-            
-            // Calculate marks outstanding EXACTLY as in your code
-            let weeksForOutstanding = weeks.slice().reverse(); // Recent first
-            outstandingBuckets = { "THIS": [] };
-            for (let i = 0; i < 12; i++) outstandingBuckets[i] = [];
-            
-            for (let n = 1; n <= 36; n++) {
-                if (currentWeekHits[n]) {
-                    outstandingBuckets["THIS"].push({num: n, freq: currentWeekHits[n]});
-                    continue;
+                // Check if it's a holiday (all draws are empty)
+                const isHoliday = !draws || Object.values(draws).every(v => !v || v === "-" || v === "–" || v === "PENDING");
+                
+                // For current week, never show HOLIDAY - show pending/countdown instead
+                const shouldShowHoliday = isHoliday && !isCurrentWeek;
+                
+                html += `<tr${isCurrentWeek ? ' class="current-day-row"' : ''}>`;
+                html += `<td class="date-header">${day.date}<br><small style="color:#666;">${day.dayName.slice(0,3)}</small></td>`;
+                
+                if (shouldShowHoliday) {
+                    // Past week holiday - show HOLIDAY
+                    html += `<td colspan="4" class="holiday-cell">🗓️ HOLIDAY 🗓️</td>`;
+                } else {
+                    // Current week or has draws - show draws or pending
+                    ['MOR', 'MID', 'NON', 'EVE'].forEach(timeSlot => {
+                        const drawValue = draws[timeSlot];
+                        html += '<td>';
+                        
+                        if (!drawValue || drawValue === "-" || drawValue === "PENDING") {
+                            if (isCurrentWeek) {
+                                // Current week pending - show countdown/pending indicator
+                                const now = new Date();
+                                const drawTime = getDrawTime(timeSlot);
+                                const timeDiff = drawTime - now;
+                                
+                                if (timeDiff > 0) {
+                                    // Draw hasn't happened yet today
+                                    const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+                                    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                                    
+                                    if (hours > 0) {
+                                        html += `<span style="color:#ffa500; font-size:10px; font-weight:bold;">${hours}h</span>`;
+                                    } else if (minutes > 0) {
+                                        html += `<span style="color:#ff4444; font-size:10px; font-weight:bold;">${minutes}m</span>`;
+                                    } else {
+                                        html += `<span style="color:#ff4444; font-size:10px; font-weight:bold;">DUE</span>`;
+                                    }
+                                } else {
+                                    // Draw time has passed but no result yet
+                                    html += '<span class="pending-hourglass">⏳</span>';
+                                }
+                            } else {
+                                // Past week with no draw
+                                html += '<span style="color:#666; font-size:11px;">–</span>';
+                            }
+                        } else {
+                            // Has draw value
+                            const num = String(drawValue).padStart(2, '0');
+                            const color = numberColors[num] || '#ffffff';
+                            html += `<span class="draw-ball-widget" style="background:${color}">${num}</span>`;
+                        }
+                        
+                        html += '</td>';
+                    });
                 }
-                let found = false;
-                for (let i = 1; i < weeksForOutstanding.length && i <= 12; i++) {
-                    let weekData = weeksForOutstanding[i];
-                    let weekNums = new Set();
-                    weekData.days.forEach(d => Object.values(d.draws).forEach(v => {
-                        if(v && v !== "-" && v !== "PENDING") weekNums.add(parseInt(v));
-                    }));
-                    
-                    if (weekNums.has(n)) {
-                        outstandingBuckets[i-1].push(n);
-                        found = true;
-                        break;
+                
+                html += '</tr>';
+            });
+            
+            html += `</tbody></table>`;
+            container.innerHTML = html;
+            
+            // Update title
+            const weekDiff = currentWeekIndex; // Weeks from most recent
+            const weekLabel = weekDiff === 0 ? "THIS WEEK" : 
+                            weekDiff === 1 ? "LAST WEEK" : 
+                            `${weekDiff} WEEKS AGO`;
+            
+            title.textContent = `${dayName} • ${weekLabel} • ${daysToShow.length} WEEKS SHOWN`;
+        }
+
+        // Helper function to get draw times
+        function getDrawTime(timeSlot) {
+            const now = new Date();
+            const times = {
+                'MOR': { hour: 10, minute: 30 },
+                'MID': { hour: 13, minute: 0 },
+                'NON': { hour: 16, minute: 0 },
+                'EVE': { hour: 19, minute: 0 }
+            };
+            
+            if (times[timeSlot]) {
+                const drawTime = new Date(now);
+                drawTime.setHours(times[timeSlot].hour, times[timeSlot].minute, 0, 0);
+                return drawTime;
+            }
+            
+            return now;
+        }
+
+        function navigateDay(direction) {
+            if (!calendarWeeks || calendarWeeks.length === 0) return;
+            
+            // Get list of weekdays (skip Sunday)
+            const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const currentIndex = weekdays.indexOf(currentDayOfWeek);
+            
+            if (currentIndex === -1) return;
+            
+            // Calculate new day index with wrapping
+            let newIndex = currentIndex + direction;
+            if (newIndex < 0) newIndex = 5; // Wrap to Saturday
+            if (newIndex > 5) newIndex = 0; // Wrap to Monday
+            
+            currentDayOfWeek = weekdays[newIndex];
+            renderCalendarWidgetStyle();
+        }
+
+        function navigateWeek(direction) {
+            if (!calendarWeeks || calendarWeeks.length === 0) return;
+            
+            // Move to next/previous week
+            currentWeekIndex += direction;
+            
+            // Ensure we stay within bounds
+            if (currentWeekIndex < 0) currentWeekIndex = 0;
+            if (currentWeekIndex >= calendarWeeks.length) currentWeekIndex = calendarWeeks.length - 1;
+            
+            renderCalendarWidgetStyle();
+        }
+
+        function navigateToDayOfWeek(dayName) {
+            currentDayOfWeek = dayName;
+            renderCalendarWidgetStyle();
+        }
+
+        function toggleDropdown(type) {
+            const dropdown = document.getElementById(`${type}-dropdown`);
+            if (!dropdown) {
+                console.error(`Dropdown element not found: ${type}-dropdown`);
+                return;
+            }
+            
+            // The button IDs are 'calBtn' and 'outBtn', not 'calendarBtn' and 'outstandingBtn'
+            const button = type === 'calendar' ? document.getElementById('calBtn') : 
+                        type === 'outstanding' ? document.getElementById('outBtn') : null;
+            
+            if (!button) {
+                console.error(`Button element not found for type: ${type}`);
+                return;
+            }
+            
+            // Close other dropdown if open
+            if (activeDropdown && activeDropdown !== dropdown) {
+                activeDropdown.style.display = 'none';
+                const otherType = activeDropdown.id.replace('-dropdown', '');
+                const otherButton = otherType === 'calendar' ? document.getElementById('calBtn') : 
+                                otherType === 'outstanding' ? document.getElementById('outBtn') : null;
+                if (otherButton) {
+                    otherButton.innerHTML = otherButton.innerHTML.replace('▴', '▾');
+                }
+            }
+            
+            // Toggle current dropdown
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+                button.innerHTML = button.innerHTML.replace('▴', '▾');
+                activeDropdown = null;
+            } else {
+                dropdown.style.display = 'block';
+                button.innerHTML = button.innerHTML.replace('▾', '▴');
+                activeDropdown = dropdown;
+                
+                // Load/refresh data if needed
+                if (type === 'calendar') {
+                    if (!calendarWeeks || calendarWeeks.length === 0) {
+                        initCalendar();
+                    } else {
+                        renderCalendarWidgetStyle();
+                    }
+                } else if (type === 'outstanding') {
+                    renderOutstandingTable();
+                }
+            }
+        }
+    
+        function processData(weeks) {
+    // EXACT data processing logic from your second code
+    const dayOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const timeOrder = ["MOR", "MID", "NON", "EVE"];
+    const timeNames = { MOR: "Morning", MID: "Midday", NON: "Afternoon", EVE: "Evening" };
+    
+    // Reset data structures
+    timeline = [];
+    markInfo = {};
+    currentWeekHits = {};
+    const lastSeenDate = {}, lastSeenTime = {}, frequency = {};
+    
+    // Sort weeks chronologically
+    weeks.sort((a, b) => {
+        let pa = a.startDate.split(" ");
+        let pb = b.startDate.split(" ");
+        return new Date(`${pa[2]}-${pa[1]}-${pa[0]}`) - new Date(`${pb[2]}-${pb[1]}-${pb[0]}`);
+    });
+    
+    for (let week of weeks) {
+        let parts = week.startDate.split(" ");
+        let monthMap = {"Jan":0,"Feb":1,"Mar":2,"Apr":3,"May":4,"Jun":5,"Jul":6,"Aug":7,"Sep":8,"Oct":9,"Nov":10,"Dec":11};
+        let startDate = new Date(parts[2], monthMap[parts[1]], parts[0]);
+        
+        for (let day of week.days) {
+            let dDate = new Date(startDate);
+            dDate.setDate(dDate.getDate() + dayOrder.indexOf(day.dayName));
+            
+            for (let t of timeOrder) {
+                let n = day.draws[t];
+                if (!n || n === "-" || n === "PENDING") continue;
+                let num = parseInt(n);
+                if (num < 1 || num > 36) continue;
+                
+                // Track current week hits for widget
+                if (week.isCurrentWeek === true) {
+                    currentWeekHits[num] = (currentWeekHits[num] || 0) + 1;
+                }
+                
+                // Track frequency and last seen for widget
+                frequency[num] = (frequency[num] || 0) + 1;
+                lastSeenDate[num] = dDate;
+                lastSeenTime[num] = timeNames[t];
+                
+                // Original timeline processing
+                let entry = { 
+                    num, 
+                    date: dDate.getTime(), 
+                    dateStr: dDate.toLocaleDateString("en-GB", {weekday:"short", day:"2-digit", month:"short", year: "numeric"}).toUpperCase(), 
+                    dayName: day.dayName, 
+                    timeSlot: t, 
+                    time: timeNames[t] 
+                };
+                timeline.push(entry);
+                
+                if (!(num in markInfo)) { 
+                    markInfo[num] = { 
+                        frequency: 0, 
+                        lastDate: null, 
+                        history: [], 
+                        nextNums: {} 
+                    }; 
+                }
+                markInfo[num].frequency++;
+                markInfo[num].lastDate = dDate;
+                markInfo[num].history.push({ 
+                    date: entry.dateStr, 
+                    time: entry.time, 
+                    ts: entry.date 
+                });
+                
+                if (timeline.length > 1) {
+                    let prev = timeline[timeline.length - 2];
+                    if (markInfo[prev.num]) {
+                        markInfo[prev.num].nextNums[num] = (markInfo[prev.num].nextNums[num] || 0) + 1;
                     }
                 }
             }
-            
-            jsNowTs = now.getTime();
         }
+    }
+    
+    // Generate marks array
+    marks = [];
+    let now = new Date();
+    for (let n = 1; n <= 36; n++) {
+        let info = markInfo[n] || { frequency: 0, lastDate: null };
+        let daysAgo = info.lastDate ? Math.floor((now.getTime() - info.lastDate.getTime()) / 86400000) : 999;
+        let avg = intervals[n] || 12;
+        let dLeft = avg - daysAgo;
+        let status = (dLeft <= 0) ? "OVERDUE" : (dLeft <= 2 ? "CLOSE" : "NORMAL");
+        
+        marks.push({ 
+            num: n, 
+            spirit: spirits[n], 
+            date: info.lastDate ? info.lastDate.toLocaleDateString("en-GB", {day:"2-digit", month:"short", year: "numeric"}).toUpperCase() : "N/A", 
+            days: daysAgo, 
+            dLeft, 
+            status, 
+            avg, 
+            frequency: info.frequency,
+            time: lastSeenTime[n] || "N/A",
+            isHitThisWeek: !!currentWeekHits[n]
+        });
+    }
+    marks.sort((a,b) => b.days - a.days);
+    
+    // Calculate marks outstanding EXACTLY as in your code
+    let weeksForOutstanding = weeks.slice().reverse(); // Recent first
+    outstandingBuckets = { "THIS": [] };
+    for (let i = 0; i < 12; i++) outstandingBuckets[i] = [];
+    
+    for (let n = 1; n <= 36; n++) {
+        if (currentWeekHits[n]) {
+            outstandingBuckets["THIS"].push({num: n, freq: currentWeekHits[n]});
+            continue;
+        }
+        let found = false;
+        for (let i = 1; i < weeksForOutstanding.length && i <= 12; i++) {
+            let weekData = weeksForOutstanding[i];
+            let weekNums = new Set();
+            weekData.days.forEach(d => Object.values(d.draws).forEach(v => {
+                if(v && v !== "-" && v !== "PENDING") weekNums.add(parseInt(v));
+            }));
+            
+            if (weekNums.has(n)) {
+                outstandingBuckets[i-1].push(n);
+                found = true;
+                break;
+            }
+        }
+    }
+    
+    jsNowTs = now.getTime();
+    
+    // ========== CALENDAR DATA PROCESSING - SIMPLIFIED (No isToday reference) ==========
+    try {
+        if (weeks && weeks.length > 0) {
+            calendarWeeks = weeks.map(week => ({
+                ...week,
+                days: week.days || []
+            })).reverse(); // Most recent first
+            
+            // Set current week index
+            const currentWeekIndexInArray = calendarWeeks.findIndex(w => w.isCurrentWeek);
+            if (currentWeekIndexInArray !== -1) {
+                currentWeekIndex = currentWeekIndexInArray;
+            } else {
+                currentWeekIndex = 0; // Show most recent week by default
+            }
+            
+            // Get today's day (skip Sunday)
+            const today = new Date();
+            let todayName = today.toLocaleString('en-US', { weekday: 'long', timeZone: 'America/Barbados' });
+            todayName = todayName === 'Sunday' ? 'Monday' : todayName;
+            currentDayOfWeek = todayName;
+            
+            console.log(`Processed ${calendarWeeks.length} calendar weeks`);
+            console.log(`Current day: ${currentDayOfWeek}, Week index: ${currentWeekIndex}`);
+        }
+    } catch (error) {
+        console.error('Error processing calendar data:', error);
+    }
+}
         
         function loadSampleData() {
             // Generate sample data matching your structure
@@ -1342,6 +1993,7 @@
             }
             
             processData(sampleWeeks);
+            initCalendar();
         }
         
         // ========== RENDERING FUNCTIONS ==========
@@ -1413,7 +2065,7 @@
             if (!outTable) return;
             
             outTable.innerHTML = `
-                <div style="font-size:18px; color:gray; margin-bottom:8px; text-align:center;">AGING ANALYSIS (LAST 12 WEEKS)</div>
+                <div style="font-size:14px; color:gray; margin-bottom:8px; text-align:center;">AGING ANALYSIS (LAST 12 WEEKS)</div>
                 ${Object.keys(outstandingBuckets).filter(k => outstandingBuckets[k].length > 0).sort((a,b) => {
                     if(a==="THIS") return -1; if(b==="THIS") return 1; return a-b;
                 }).map(k => {
@@ -1602,18 +2254,6 @@
         function toggle(i) {
             let p = document.getElementById('p-' + i);
             p.style.display = p.style.display === 'block' ? 'none' : 'block';
-        }
-        
-        function toggleOutstanding() {
-            let p = document.getElementById('outstanding-table');
-            let btn = document.getElementById('outBtn');
-            if (p.style.display === 'block') {
-                p.style.display = 'none';
-                btn.innerHTML = '🧮 MARKS OUTSTANDING ▾';
-            } else {
-                p.style.display = 'block';
-                btn.innerHTML = '🧮 MARKS OUTSTANDING ▴';
-            }
         }
         
         function doSearch() {
