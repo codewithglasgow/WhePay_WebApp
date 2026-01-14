@@ -1558,28 +1558,34 @@
                 const day = week.days.find(d => d.dayName === dayName);
                 
                 if (day) {
-                    // Format date like widget: "11-Jan"
                     const parts = week.startDate.split(' ');
-                    const dateStr = `${parts[0]}-${parts[1].slice(0,3)}`;
+                    const dayNum = parseInt(parts[0], 10);
+                    const monthName = parts[1];
+                    const year = parseInt(parts[2], 10);
                     
-                    // Calculate the actual date of this day
-                    const baseDate = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+                    // Map month names to numbers
+                    const monthMap = {
+                        "Jan": 0, "Feb": 1, "Mar": 2, "Apr": 3, "May": 4, "Jun": 5,
+                        "Jul": 6, "Aug": 7, "Sep": 8, "Oct": 9, "Nov": 10, "Dec": 11
+                    };
+                    
+                    // Create base date (Monday)
+                    const baseDate = new Date(year, monthMap[monthName], dayNum);
                     const dayIndex = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].indexOf(dayName);
                     const actualDate = new Date(baseDate);
                     actualDate.setDate(baseDate.getDate() + dayIndex);
                     
-                    // Create date string with correct day of month for this specific weekday
+                    // Format date
                     const dayOfMonth = actualDate.getDate();
-                    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                    const monthName = monthNames[actualDate.getMonth()];
-                    const year = actualDate.getFullYear();
+                    const displayMonthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                    const displayMonthName = displayMonthNames[actualDate.getMonth()];
+                    const displayYear = actualDate.getFullYear();
                     
-                    // Use the actual date for display, not the week start date
-                    const displayDateStr = `${dayOfMonth}-${monthName}`;
+                    const displayDateStr = `${dayOfMonth}-${displayMonthName}`;
                     
                     daysToShow.push({
-                        date: displayDateStr,  // Use the calculated date
-                        year: year.toString(),
+                        date: displayDateStr,
+                        year: displayYear.toString(),
                         draws: day.draws || {},
                         dayName: day.dayName,
                         weekIndex: i,
@@ -1601,23 +1607,30 @@
                     
                     if (day) {
                         const parts = week.startDate.split(' ');
+                        const dayNum = parseInt(parts[0], 10);
+                        const monthName = parts[1];
+                        const year = parseInt(parts[2], 10);
                         
-                        const baseDate = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+                        const monthMap = {
+                            "Jan": 0, "Feb": 1, "Mar": 2, "Apr": 3, "May": 4, "Jun": 5,
+                            "Jul": 6, "Aug": 7, "Sep": 8, "Oct": 9, "Nov": 10, "Dec": 11
+                        };
+                        
+                        const baseDate = new Date(year, monthMap[monthName], dayNum);
                         const dayIndex = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].indexOf(dayName);
                         const actualDate = new Date(baseDate);
                         actualDate.setDate(baseDate.getDate() + dayIndex);
                         
-                        // Create date string with correct day of month
                         const dayOfMonth = actualDate.getDate();
-                        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                        const monthName = monthNames[actualDate.getMonth()];
-                        const year = actualDate.getFullYear();
+                        const displayMonthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                        const displayMonthName = displayMonthNames[actualDate.getMonth()];
+                        const displayYear = actualDate.getFullYear();
                         
-                        const displayDateStr = `${dayOfMonth}-${monthName}`;
+                        const displayDateStr = `${dayOfMonth}-${displayMonthName}`;
                         
                         daysToShow.push({
                             date: displayDateStr,
-                            year: year.toString(),
+                            year: displayYear.toString(),
                             draws: day.draws || {},
                             dayName: day.dayName,
                             weekIndex: i,
