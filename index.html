@@ -1,48 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-
-    <!-- Mobile / PWA friendly -->
+    <title>FSP SAGi</title>
+    
+    <!-- ALL FAVICONS FOR MOBILE HOME SCREEN -->
+    <link rel="icon" href="https://drive.google.com/uc?id=1vFP8OL3NIHsQBxSlS5ItXOOZEFoeiZhQ" type="image/png" sizes="192x192">
+    <link rel="icon" href="https://drive.google.com/uc?id=1vFP8OL3NIHsQBxSlS5ItXOOZEFoeiZhQ" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="https://drive.google.com/uc?id=1vFP8OL3NIHsQBxSlS5ItXOOZEFoeiZhQ">
+    
+    <!-- PWA/MOBILE HOME SCREEN META TAGS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Yeshiva Yada">
     <meta name="theme-color" content="#000000">
-
-    <!-- Instant redirect -->
-    <meta http-equiv="refresh" content="0; url=https://sites.google.com/view/codewithglasgow-wheplay/whe-play">
-
-    <title>FSP SAGi Systems • Redirecting</title>
-
-    <!-- Optional: favicon -->
-    <link rel="icon" href="https://drive.google.com/uc?id=1vFP8OL3NIHsQBxSlS5ItXOOZEFoeiZhQ" type="image/png">
-
-    <!-- Fallback for browsers with meta refresh disabled -->
-    <script>
-        window.location.replace(
-          "https://sites.google.com/view/codewithglasgow-wheplay/whe-play"
-        );
-    </script>
-
+    
     <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #000;
-            color: #fff;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            text-align: center;
+        body { margin: 0; padding: 0; width: 100%; height: 100vh; overflow: hidden; }
+        iframe { 
+            width: 100%; 
+            height: 100vh; 
+            border: none; 
+            display: block; 
         }
     </style>
 </head>
 <body>
-    <div>
-        <p>Launching Whe Play…</p>
-        <p>If you are not redirected automatically,
-            <a href="https://sites.google.com/view/codewithglasgow-wheplay/whe-play"
-               style="color:#4da3ff;">tap here</a>.
-        </p>
-    </div>
+    <iframe src="https://codewithglasgow.github.io/hwelapy/"
+            allowfullscreen></iframe>
 </body>
 </html>
