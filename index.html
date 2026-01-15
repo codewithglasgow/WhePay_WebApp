@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Maintenance | Beta Testing Complete</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(30, 30, 46, 0.85);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #7b2ff7, #f107a3);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #7b2ff7, #f107a3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        
+        .message-container {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 35px;
+            margin: 30px 0;
+            border-left: 4px solid #7b2ff7;
+        }
+        
+        .main-message {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .sub-message {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #ff9a3c;
+        }
+        
+        .maintenance-notice {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #a9b7c6;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            border-left: 3px solid #ff9a3c;
+        }
+        
+        .icon-container {
+            font-size: 4rem;
+            margin-bottom: 25px;
+        }
+        
+        .maintenance-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .developer-credit {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'Source Code Pro', monospace;
+            color: #7b2ff7;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .status-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .status-item {
+            background-color: rgba(0, 0, 0, 0.25);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ff4757;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .status-indicator.active {
+            background-color: #2ed573;
+        }
+        
+        .countdown {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            color: #a9b7c6;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .main-message {
+                font-size: 1.5rem;
+            }
+            
+            .sub-message {
+                font-size: 1.3rem;
+            }
+            
+            .message-container {
+                padding: 25px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .main-message {
+                font-size: 1.3rem;
+            }
+            
+            .sub-message {
+                font-size: 1.1rem;
+            }
+            
+            .maintenance-notice {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="icon-container">
+            <i class="fas fa-tools maintenance-icon"></i>
+        </div>
+        
+        <h1>Beta Testing Complete</h1>
+        
+        <div class="message-container">
+            <div class="main-message">THANK YOU FOR BETA TESTING</div>
+            <div class="sub-message">LINK IS NO LONGER AVAILABLE</div>
+            
+            <div class="maintenance-notice">
+                <i>server is under maintenance as there has been a high volume of users accessing this site</i>
+            </div>
+        </div>
+        
+        <div class="status-container">
+            <div class="status-item">
+                <div class="status-indicator"></div>
+                <span>Server Maintenance in Progress</span>
+            </div>
+            <div class="status-item">
+                <div class="status-indicator"></div>
+                <span>Beta Testing Complete</span>
+            </div>
+            <div class="status-item">
+                <div class="status-indicator active"></div>
+                <span>Security Check: Active</span>
+            </div>
+        </div>
+        
+        <div class="countdown">
+            <i class="fas fa-clock"></i> Estimated completion: 2-4 hours
+        </div>
+        
+        <div class="developer-credit">
+            Developed by CODEWITHGLASGOW
+        </div>
+    </div>
+    
+    <script>
+        // Update the time every minute
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.getElementById('current-time');
+            timeElement.textContent = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        }
+        
+        // Initialize time update
+        updateTime();
+        setInterval(updateTime, 60000);
+        
+        // Add a simple countdown timer (for demonstration)
+        let countdown = 240; // 4 hours in minutes
+        const countdownElement = document.querySelector('.countdown');
+        
+        function updateCountdown() {
+            const hours = Math.floor(countdown / 60);
+            const minutes = countdown % 60;
+            
+            countdownElement.innerHTML = `<i class="fas fa-clock"></i> Estimated completion: ${hours}h ${minutes}m`;
+            
+            if (countdown > 0) {
+                countdown--;
+            } else {
+                countdownElement.innerHTML = `<i class="fas fa-clock"></i> Maintenance complete - Refreshing soon`;
+            }
+        }
+        
+        // Update countdown every minute
+        setInterval(updateCountdown, 60000);
+        
+        // Add some visual effects for the status indicators
+        const indicators = document.querySelectorAll('.status-indicator');
+        indicators.forEach((indicator, index) => {
+            // Set a random delay for each pulse animation
+            const delay = index * 0.3;
+            indicator.style.animationDelay = `${delay}s`;
+        });
+    </script>
+</body>
+</html>
